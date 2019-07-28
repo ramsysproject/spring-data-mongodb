@@ -1,15 +1,15 @@
 package com.emramirez.mongo.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
-@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@NoArgsConstructor
 public class Customer {
 
     private String name;

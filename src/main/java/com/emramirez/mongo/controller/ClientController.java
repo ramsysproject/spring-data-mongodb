@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/customers")
 @RequiredArgsConstructor
@@ -23,8 +25,8 @@ public class ClientController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity findByName(@RequestParam String name) {
-        Customer customer = customerTemplate.findOneByName(name);
+        List<Customer> customers = customerTemplate.findAllByName(name);
 
-        return ResponseEntity.ok(customer);
+        return ResponseEntity.ok(customers);
     }
 }
